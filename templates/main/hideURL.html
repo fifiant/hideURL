@@ -1,0 +1,15 @@
+<form method="post" action=".">
+    Your blocked URL:
+    <input type="text" name="direct_url" size="40" />
+    <input type="submit" value="Get RedirectAnywhere URL" />
+</form>
+
+{% if redirect_anywhere %}
+<br />Your RedirectAnywhere URL is to unblock the URL below. Click on it to continue..
+<h1><a href="{{hideURL.url}}/">{{hideURL.url}}</a></h1>
+{% endif %}
+
+{% if new_redirect_anywhere %}
+<br />Your RedirectAnywhere URL for <a href="{{new_hideURL.url}}">{{new_redirect_anywhere.url}}</a> is:<br />
+<textarea class="textarea">/hideURL/{{new_hideURL.md5sum}}</textarea>
+{% endif %}
